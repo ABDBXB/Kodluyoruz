@@ -17,7 +17,7 @@ console.log("----------------Primitive Types----------------");
 //.Undefined:
     let UnVariable= undefined;
     console.log(UnVariable); // Java Script undefined değişkenleri kullanıyor / undefined kullanmak tercih edilmiyor
-//===========================================================================
+//==================================END=========================================//
 
 //Typof:
     console.log("----------------Typeof----------------");
@@ -26,7 +26,8 @@ console.log("----------------Primitive Types----------------");
     console.log(typeof Variable);
     console.log(typeof UnVariable);
 
-//===========================================================================
+//==================================END=========================================//
+
 //javascript operators
 console.log("----------------javascript operators----------------");
 //. = Operator
@@ -45,3 +46,11 @@ console.log("----------------javascript operators----------------");
     FirstNumber=77;
     Num+=FirstNumber; // Num = Num + FirstNumber
     console.log("+= Operator : ",Num);
+
+//==================================END=========================================//
+
+// Mutable & Immutable
+// Mutable -> Değiştirilebilir
+// Immutable -> Değiştirilemez
+
+    const b = "Kodluyoruz"; // Sabit Değerli Değiştiremeyiz 
