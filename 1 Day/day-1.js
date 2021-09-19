@@ -53,4 +53,4 @@ console.log("----------------javascript operators----------------");
 // Mutable -> Değiştirilebilir
 // Immutable -> Değiştirilemez
 
-    const b = "Kodluyoruz"; // Sabit Değerli Değiştiremeyiz 
+    const b = "Kodluyoruz"; // Sabit Değer Değiştiremeyiz 
