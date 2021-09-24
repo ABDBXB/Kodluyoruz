@@ -49,6 +49,22 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+API_KEY;
+
+const searchBar=document.getElementById('searchinput');
+searchBar.addEventListener('keyup' , (e) =>{
+		const searchword = e.target.value;
+	if (searchword) {
+		getMovies(searchURL+'&query='+searchword);
+	
+	}else{
+		getMovies(API_URL);
+	}
+	
+});
+
+
+
+
 	
 function getMovies(url) {
   lastUrl = url;
@@ -58,7 +74,6 @@ function getMovies(url) {
             showMovies(data.results);
        }
     })
-
 }
 function showMovies(data) {
 	const userList = document.getElementById('cardlist');
@@ -90,23 +105,12 @@ function showMovies(data) {
 	  </div>
         
         `
-
         userList.appendChild(movieEl);
     })
 }
 
 
-const searchBar=document.getElementById('searchinput');
-searchBar.addEventListener('keyup' , (e) =>{
-		const searchword = e.target.value;
-	if (searchword) {
-		getMovies(searchURL+'&query='+searchword);
-	
-	}else{
-		getMovies(API_URL);
-	}
-	
-});
+
 getMovies(API_URL);
 	
 	
@@ -170,27 +174,5 @@ getMovies(API_URL);
 	
 	
 	*/
-   /*fetch('https://jsonplaceholder.typicode.com/users', {
-        method: 'GET',
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-        .then((response) => response.json())
-        .then((json) => {
-            const userArray = json;
-            const userList = document.getElementById('cardlist')
-
-            userArray.forEach((user, index) => {
-                const li = document.createElement('div')
-                li.innerText = `${user.name} - ${user.id}`
-                userList.appendChild(li)
-            })
-
-            const userNameList = userArray.map((user)=>{
-                return user.name
-            })
-            console.log(userNameList)
-        });*/
 </script>
 </html>
