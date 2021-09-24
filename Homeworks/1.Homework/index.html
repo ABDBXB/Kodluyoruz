@@ -33,12 +33,27 @@
 	  </div>
 		</div> -->
 		<!--//Card-->
-		
-
-
-
 	
-	
+	</div>
+	<div class="buttonsdiv" >
+		<div class="pagidiv" >
+			<ul class="pagination">
+				 <a class="nav-link-left nav-link" href="">First</a>
+				 <a class="nav-link" id="pr">Prev</a>
+				
+						
+					
+						
+						<a class='links' id="pagenumber"></a>
+						 
+						
+
+				 <a class="nav-link" id="ne">Next</a>
+				<a class="nav-link-right nav-link" href="">Last</a>
+					 </ul>
+				</div>
+			</div>
+
 	</div>
 </body>
 
@@ -50,6 +65,9 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+API_KEY;
+var pageno=0;
+const pagenumber=document.getElementById('pagenumber');
+	
 
 const searchBar=document.getElementById('searchinput');
 searchBar.addEventListener('keyup' , (e) =>{
@@ -71,6 +89,9 @@ function getMovies(url) {
   lastUrl = url;
     fetch(url).then(res => res.json()).then(data => {
         if(data.results.length !== 0){
+			pageno = data.page;
+			pagenumber.innerText=pageno;
+			console.log("pageno= " + pageno);
             showMovies(data.results);
        }
     })
@@ -81,8 +102,14 @@ function showMovies(data) {
     data.forEach(movie => {
         const {title, poster_path, vote_average, overview, id,release_date} = movie;
         const movieEl = document.createElement('div');
+		if (release_date != undefined) {
+			var datearray = release_date.split("-");
+		} else {
+			datearray=['No Date Here'];
+		}
+		
 
-		const datearray = release_date.split("-");
+		
 		if (title.length>11) {
 			var subtitle = title.substring(0,11)+"...";
 		} else{
@@ -105,12 +132,31 @@ function showMovies(data) {
         
         `
         userList.appendChild(movieEl);
+		
     })
 }
 
 
+function next(){
+	let nextpage=pageno+1;
+	console.log(nextpage)
+	getMovies(API_URL+'&page='+nextpage);
+}
+function prev(){
+	let nextpage=pageno-1;
+	console.log(nextpage)
+	getMovies(API_URL+'&page='+nextpage);
+}
 
-getMovies(API_URL);
+const nebutton= document.getElementById('ne');
+	nebutton.addEventListener('click',next);
+
+const prbutton= document.getElementById('pr');
+	prbutton.addEventListener('click',prev);
+
+	//getMovies(API_URL+'&sort_by=vote_average.asc');
+	//getMovies(API_URL+'&page=9');
+	getMovies(API_URL);
 
 	
 	

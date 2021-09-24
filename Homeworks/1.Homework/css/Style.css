@@ -7,6 +7,9 @@
        url('../Fonts/Roboto-Bold.ttf') format('truetype'),
        url('../Fonts/Roboto-Bold.woff') format('woff');
 }
+a:hover{
+	text-decoration: none;
+}
 input:focus{
     outline: none;
 	transition: 0.2s ease-in-out;
@@ -155,4 +158,65 @@ input:focus{
 	
 }
 
+/*--------------------------------------------------------------------- pagination css ---------------------------------------------------------------------*/
+.pagidiv{
+    width: 80%;
+    display: block;
+	text-align: center;
+	margin: 0px auto;
+	padding: 20px 0px;
+	box-shadow: 0pc 0pc 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+ .pagination {
+  display: inline-block;
+  background-color: transparent;
+	 
+}
 
+.pagination a {
+	font-weight: bold;
+	font-size: 16px;
+	padding: 11px 20px;
+	margin: 0px 4px;
+	height: 50px;
+	display: inline-block;
+	transition: 0.3s ease-in-out;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+.pagination a:hover {
+  color: #000000;
+  border-radius: 3px;
+  border-bottom: 1px #FF0000 solid;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.pagination .active {
+  background-color: #FF0000;
+  border-bottom: 2px #000000 solid;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.pagination .active:hover {
+  background-color: #FB2A15;
+  color: white;
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+.pagination .nav-link {
+  color: #000000;
+  padding: 10px 20px;
+}
+
+.pagination .nav-link-left {
+  border-radius: 5px 0px 0px 5px;
+  margin-right: -5px;
+}
+ .pagination .nav-link-right {
+  border-radius: 0px 5px 5px 0px;
+  margin-left: -5px;
+}
