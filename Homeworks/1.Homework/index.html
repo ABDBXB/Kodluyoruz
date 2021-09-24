@@ -38,7 +38,7 @@
 	<div class="buttonsdiv" >
 		<div class="pagidiv" >
 			<ul class="pagination">
-				 <a class="nav-link-left nav-link" href="">First</a>
+				 <a class="nav-link-left nav-link" onclick="getMovies(API_URL+'&page=1')">First</a>
 				 <a class="nav-link" id="pr">Prev</a>
 				
 						
@@ -49,7 +49,7 @@
 						
 
 				 <a class="nav-link" id="ne">Next</a>
-				<a class="nav-link-right nav-link" href="">Last</a>
+				<a class="nav-link-right nav-link" onclick="getMovies(API_URL+'&page=500')">Last</a>
 					 </ul>
 				</div>
 			</div>
@@ -91,7 +91,6 @@ function getMovies(url) {
         if(data.results.length !== 0){
 			pageno = data.page;
 			pagenumber.innerText=pageno;
-			console.log("pageno= " + pageno);
             showMovies(data.results);
        }
     })
@@ -138,14 +137,23 @@ function showMovies(data) {
 
 
 function next(){
+	if (pageno<500) {
 	let nextpage=pageno+1;
-	console.log(nextpage)
 	getMovies(API_URL+'&page='+nextpage);
-}
+	}else{
+		getMovies(API_URL+'&page=500');
+	}
+	
+	
+	}
 function prev(){
-	let nextpage=pageno-1;
-	console.log(nextpage)
-	getMovies(API_URL+'&page='+nextpage);
+	if (pageno>1) {
+	let prepage=pageno-1;
+	getMovies(API_URL+'&page='+prepage);
+	}else{
+	getMovies(API_URL+'&page=1');
+	}
+	
 }
 
 const nebutton= document.getElementById('ne');
