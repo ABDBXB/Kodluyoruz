@@ -44,6 +44,7 @@
 
 
 <script>
+	/*
 const API_KEY = 'api_key=389be6178a32f6dac4176b5cde41dada';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
@@ -114,13 +115,13 @@ function showMovies(data) {
 getMovies(API_URL);
 	
 	
-	
+	*/
 	
 	
 	
 
 
-/*
+
 	fetch('https://api.themoviedb.org/3/discover/movie?api_key=389be6178a32f6dac4176b5cde41dada')
   .then(response => response.json())
   .then((json)=>{
@@ -128,7 +129,7 @@ getMovies(API_URL);
   	const filmarray = jsonarray.results
   	filmarray.forEach(element => console.log(element));
   	const userList = document.getElementById('cardlist');
-  	filmarray.forEach((film, index) => {
+  	filmarray.forEach((film) => {
                 const div = document.createElement('div');
 				div.className="card";
 		
@@ -173,6 +174,5 @@ getMovies(API_URL);
   });
 	
 	
-	*/
 </script>
 </html>
