@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FilmFlex</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/Style.css">
+</head>
+
+<body>
+	<!--Header-->
+	<div class="head">
+	<div class="searchbar">
+		<input id="searchinput" class="searchinput" type="text" placeholder="Search.....">
+		</div>
+	</div>
+	<!--//Header-->
+	
+	<div class="container" id="cardlist">
+		<!--Card-->
+  <div class="card">
+		<div class="cardphoto">
+	  <img src="https://via.placeholder.com/350" alt="">
+	  </div>
+	  <div class="cardname">
+	  <p>Batman I</p>
+		  	  <div class="cardevaluation">
+		  <p>7.1</p>
+		  </div>
+	  </div>
+	  <div class="carddate">
+	  <p>1989</p>
+	  </div>
+		</div>
+		<!--//Card-->
+		
+
+
+
+	
+	
+	</div>
+</body>
+
+
+<script>
+const API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const searchURL = BASE_URL + '/search/movie?'+API_KEY;
+	
+function getMovies(url) {
+  lastUrl = url;
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data.results)
+        if(data.results.length !== 0){
+            showMovies(data.results);
+       }
+    })
+
+}
+function showMovies(data) {
+	const userList = document.getElementById('cardlist');
+	userList.innerHTML = '';
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview, id,release_date} = movie;
+        const movieEl = document.createElement('div');
+
+		const datearray = release_date.split("-");
+		if (title.length>11) {
+			var subtitle = title.substring(0,11)+"...";
+			console.log(subtitle+".....");
+		} else{
+			subtitle=title;
+		}
+        movieEl.className="card";
+        movieEl.innerHTML = `
+		<div class="cardphoto">
+	  <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="">
+	  </div>
+	  <div class="cardname">
+	  <p>${subtitle}</p>
+		  	  <div class="cardevaluation">
+		  <p>${vote_average}</p>
+		  </div>
+	  </div>
+	  <div class="carddate">
+	  <p>${datearray[0]}</p>
+	  </div>
+        
+        `
+
+        userList.appendChild(movieEl);
+    })
+}
+
+
+const searchBar=document.getElementById('searchinput');
+searchBar.addEventListener('keyup' , (e) =>{
+		const searchword = e.target.value;
+	if (searchword) {
+		getMovies(searchURL+'&query='+searchword);
+	
+	}else{
+		getMovies(API_URL);
+	}
+	
+});
+getMovies(API_URL);
+	
+	
+	
+	
+	
+	
+
+
+/*
+	fetch('https://api.themoviedb.org/3/discover/movie?api_key=389be6178a32f6dac4176b5cde41dada')
+  .then(response => response.json())
+  .then((json)=>{
+  	const jsonarray=json;
+  	const filmarray = jsonarray.results
+  	filmarray.forEach(element => console.log(element));
+  	const userList = document.getElementById('cardlist');
+  	filmarray.forEach((film, index) => {
+                const div = document.createElement('div');
+				div.className="card";
+		
+				const cardphoto = document.createElement('div');
+				cardphoto.className="cardphoto";
+		
+		
+				const cardname = document.createElement('div');
+				cardname.className="cardname";
+				const filmname = document.createElement('p');
+				filmname.innerText = `${film.original_title}`
+				
+				const cardevaluation = document.createElement('div');
+				cardevaluation.className="cardevaluation";
+				const filmevaluation = document.createElement('p');
+				filmevaluation.innerText = `${film.vote_average}`
+				
+				
+				const carddate = document.createElement('div');
+				carddate.className="carddate";
+				const filmdate = document.createElement('p');
+				filmdate.innerText = `${film.release_date}`
+		
+                //div.innerText = `${user.id} - ${user.name}`
+				const image = document.createElement('img');
+				image.setAttribute("src","https://image.tmdb.org/t/p/w500"+film.poster_path);
+		
+		
+				
+                userList.appendChild(div);
+				div.appendChild(cardphoto);
+				div.appendChild(cardname);
+				div.appendChild(carddate);
+				cardphoto.appendChild(image);
+				cardname.appendChild(filmname);
+				cardname.appendChild(cardevaluation);
+				cardevaluation.appendChild(filmevaluation);
+				carddate.appendChild(filmdate);
+				
+            })
+  	console.log(filmarray);
+  });
+	
+	
+	*/
+   /*fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => {
+            const userArray = json;
+            const userList = document.getElementById('cardlist')
+
+            userArray.forEach((user, index) => {
+                const li = document.createElement('div')
+                li.innerText = `${user.name} - ${user.id}`
+                userList.appendChild(li)
+            })
+
+            const userNameList = userArray.map((user)=>{
+                return user.name
+            })
+            console.log(userNameList)
+        });*/
+</script>
+</html>
