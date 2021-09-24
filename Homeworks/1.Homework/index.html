@@ -142,6 +142,7 @@ function next(){
 	let nextpage=pageno+1;
 	getMovies(API_URL+'&page='+nextpage);
 	}else{
+		alert("This is Last Page");
 		getMovies(API_URL+'&page=500');
 	}
 	
@@ -152,6 +153,7 @@ function prev(){
 	let prepage=pageno-1;
 	getMovies(API_URL+'&page='+prepage);
 	}else{
+	alert("This is First Page");
 	getMovies(API_URL+'&page=1');
 	}
 	
