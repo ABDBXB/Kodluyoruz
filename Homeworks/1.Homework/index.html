@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>FilmFlex</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/Style.css">
+	<link rel="stylesheet" href="css/Style.css">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 						
 
 				 <a class="nav-link" id="ne">Next</a>
-				<a class="nav-link-right nav-link" onclick="getMovies(API_URL+'&page=500')">Last</a>
+				<a class="nav-link-right nav-link" onclick="getMovies(API_URL+'&page='+total_pages)">Last</a>
 					 </ul>
 				</div>
 			</div>
@@ -67,12 +67,14 @@ const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+API_KEY;
 var pageno=0;
+var total_pages=0;
+var searchword="";
 const pagenumber=document.getElementById('pagenumber');
 	
 
 const searchBar=document.getElementById('searchinput');
 searchBar.addEventListener('keyup' , (e) =>{
-		const searchword = e.target.value;
+		searchword = e.target.value;
 	if (searchword) {
 		getMovies(searchURL+'&query='+searchword);
 	
@@ -91,6 +93,8 @@ function getMovies(url) {
     fetch(url).then(res => res.json()).then(data => {
         if(data.results.length !== 0){
 			pageno = data.page;
+			total_pages=data.total_pages;
+			console.log(total_pages);
 			pagenumber.innerText=pageno;
             showMovies(data.results);
        }
@@ -138,16 +142,26 @@ function showMovies(data) {
 
 
 function next(){
-	if (pageno<500) {
-	let nextpage=pageno+1;
-	getMovies(API_URL+'&page='+nextpage);
-	}else{
+	if (!searchword) {
+		if (pageno<total_pages) {
+		console.log(searchword);
+		let nextpage=pageno+1;
+		getMovies(API_URL+'&page='+nextpage);
+		}else{
 		alert("This is Last Page");
-		getMovies(API_URL+'&page=500');
+		getMovies(API_URL+'&page='+total_pages);
+		}
+	}else{
+		if (pageno<total_pages) {
+		console.log(searchword);
+		let nextpage=pageno+1;
+		getMovies(searchURL+'&query='+searchword+'&page='+nextpage);
+		}else{
+		alert("This is Last Page");
+		getMovies(API_URL+'&page=1');
+		}
 	}
-	
-	
-	}
+}
 function prev(){
 	if (pageno>1) {
 	let prepage=pageno-1;
