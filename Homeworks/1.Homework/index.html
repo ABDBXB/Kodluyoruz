@@ -39,7 +39,7 @@
 	<div class="buttonsdiv" >
 		<div class="pagidiv" >
 			<ul class="pagination">
-				 <a class="nav-link-left nav-link" onclick="getMovies(API_URL+'&page=1')">First</a>
+				 <a class="nav-link-left nav-link" id="first">First</a>
 				 <a class="nav-link" id="prev">Prev</a>
 				
 						
@@ -50,7 +50,7 @@
 						
 
 				 <a class="nav-link" id="next">Next</a>
-				<a class="nav-link-right nav-link" onclick="getMovies(API_URL+'&page='+total_pages)">Last</a>
+				<a class="nav-link-right nav-link" id="last">Last</a>
 					 </ul>
 				</div>
 			</div>
@@ -135,16 +135,17 @@ function showMovies(data) {
 	  </div>
         
         `
-        userList.appendChild(movieEl);
+		userList.appendChild(movieEl);
 		
     })
 }
-
-
+//==================
+//===  Buttons   ===
+//==================
+//Next Button Function
 function next(){
 	if (!searchword) {
 		if (pageno<total_pages) {
-		console.log(searchword);
 		let nextpage=pageno+1;
 		getMovies(API_URL+'&page='+nextpage);
 		}else{
@@ -153,31 +154,63 @@ function next(){
 		}
 	}else{
 		if (pageno<total_pages) {
-		console.log(searchword);
 		let nextpage=pageno+1;
 		getMovies(searchURL+'&query='+searchword+'&page='+nextpage);
 		}else{
 		alert("This is Last Page");
-		getMovies(API_URL+'&page=1');
 		}
 	}
 }
+//Prev Button Function
 function prev(){
-	if (pageno>1) {
-	let prepage=pageno-1;
-	getMovies(API_URL+'&page='+prepage);
+	if (!searchword) {
+		if (pageno>1) {
+		let prepage=pageno-1;
+		getMovies(API_URL+'&page='+prepage);
+		}else{
+		alert("This is First Page");
+		}
 	}else{
-	alert("This is First Page");
-	getMovies(API_URL+'&page=1');
+		if (pageno>1) {
+		let prepage=pageno-1;
+		getMovies(searchURL+'&query='+searchword+'&page='+prepage);
+		}else{
+		alert("This is First Page");
+		}
 	}
-	
 }
+//last Button Function
+function last(){
+	if (!searchword) {
+	getMovies(API_URL+'&page='+total_pages);
+	}else{
+	getMovies(searchURL+'&query='+searchword+'&page='+total_pages);
+	
+	}
+}
+//first Button Function
+function first(){
+	if (!searchword) {
+	getMovies(API_URL+'&page=1');
+	}else{
+	getMovies(searchURL+'&query='+searchword+'&page=1');
+	
+	}
+}
+
+
 
 const nebutton= document.getElementById('next');
 	nebutton.addEventListener('click',next);
 
 const prbutton= document.getElementById('prev');
 	prbutton.addEventListener('click',prev);
+
+const lastbutton= document.getElementById('last');
+	lastbutton.addEventListener('click',last);
+
+const firstbutton= document.getElementById('first');
+	firstbutton.addEventListener('click',first);
 
 	//getMovies(API_URL+'&sort_by=vote_average.asc&page=50');
 	//getMovies(API_URL+'&page=9');
