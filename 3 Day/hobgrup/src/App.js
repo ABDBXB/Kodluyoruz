@@ -1,21 +1,49 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import TableHead from "./components/TableHead";
+import TableBody from "./components/TableBody";
+import TableForm from "./components/TableForm";
 
 class App extends React.Component {
   render() {
+    return <PersonTable />;
+  }
+}
+const columns = ["id", "Name", "Age", "City", "School", "language"];
+class PersonTable extends React.Component {
+  state = {
+    data: [
+      {
+        id: 1,
+        name: "John",
+        age: 20,
+        city: "istanbul",
+        school: "19mayıs",
+        language: "Arapic",
+      },
+      {
+        id: 2,
+        name: "Ali",
+        age: 30,
+        city: "istanbul",
+        school: "Gabze Tk",
+        language: "Turkish",
+      },
+    ],
+  };
+  render() {
+    const { data } = this.state;
     return (
-      <div>
-        <h1>Helloo</h1>
+      <div className="App">
+        <table>
+          <TableHead columns={columns} />
+          <TableBody rows={data} />
+        </table>
+        <TableForm />
       </div>
     );
   }
 }
-
-
-
-
-
 
 // class App extends React.Component {
 //   render() {
