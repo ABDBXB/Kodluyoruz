@@ -6,8 +6,8 @@ class TableHead extends React.Component {
     return (
       <thead>
         <tr>
-          {columns.map((Column) => {
-            return <th>{Column}</th>;
+          {columns.map((Column,index) => {
+            return <th key={index}>{Column}</th>;
           })}
         </tr>
       </thead>

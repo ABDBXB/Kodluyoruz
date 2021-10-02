@@ -40,6 +40,25 @@ class PersonTable extends React.Component {
           <TableBody rows={data} />
         </table>
         <TableForm />
+        <button
+          onClick={() => {
+            this.setState({
+              data: [
+                ...this.state.data,
+                {
+                  id: 2,
+                  name: "Ali",
+                  age: 30,
+                  city: "istanbul",
+                  school: "Gabze Tk",
+                  language: "Turkish",
+                },
+              ],
+            });
+          }}
+        >
+          Render
+        </button>
       </div>
     );
   }

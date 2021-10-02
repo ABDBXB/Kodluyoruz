@@ -2,13 +2,14 @@ import React from "react";
 
 class TableBody extends React.Component {
   render() {
+    console.log("TableBody Rendered");
     const { rows } = this.props;
     return (
       <tbody>
         {rows.map((Person,index) => {
           return (
               
-            <tr key={`Person-${Person.id}`}>
+            <tr key={index}>
             <td>{Person.id}</td>
             <td>{Person.name}</td>
             <td>{Person.age}</td>

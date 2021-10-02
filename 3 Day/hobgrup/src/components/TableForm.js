@@ -1,24 +1,69 @@
 import React from "react";
 
 class TableForm extends React.Component {
-  state = { name: "" };
+  state = { id: 0, name: "", age: 0, city: "", school: "", language: "" };
+  constructor(props) {
+    super(props);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  handleButtonClick(e) {
+    e.preventDefault();
+    alert(this.state.name);
+  }
+
+  updateUser(event) {
+    this.setState({
+      [event.target.id]: [event.target.value],
+    })
+  }
 
   render() {
     return (
       <from>
-        <input type="number" placeholder="ID"></input>
         <input
+          id="id"
+          type="number"
+          placeholder="ID"
+          onChange={this.updateUser}
+        ></input>
+
+        <input
+          id="name"
           type="text"
           placeholder="Name"
-          onChange={(evet) => {
-            this.setState({ name: evet.target.value });
-          }}
+          onChange={this.updateUser}
         ></input>
-        <input type="number" placeholder="Age"></input>
-        <input type="text" placeholder="City"></input>
-        <input type="text" placeholder="School"></input>
-        <input type="text" placeholder="Language"></input>
-        <button>Add</button>
+
+        <input
+          id="age"
+          type="number"
+          placeholder="Age"
+          onChange={this.updateUser}
+        ></input>
+
+        <input
+          id="city"
+          type="text"
+          placeholder="City"
+          onChange={this.updateUser}
+        ></input>
+
+        <input
+          id="school"
+          type="text"
+          placeholder="School"
+          onChange={this.updateUser}
+        ></input>
+
+        <input
+          id="language"
+          type="text"
+          placeholder="Language"
+          onChange={this.updateUser}
+        ></input>
+        <button onClick={this.handleButtonClick}>Add</button>
       </from>
     );
   }
