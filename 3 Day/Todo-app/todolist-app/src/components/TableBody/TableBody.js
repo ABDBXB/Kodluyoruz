@@ -11,7 +11,7 @@ function TableBody() {
             <tr key={index}>
               <th>{todo.text}</th>
               <button onClick={() => {
-              removeTodo(todo.text);
+              removeTodo(todo.id);
               }}>Remove</button>
             </tr>
           );
