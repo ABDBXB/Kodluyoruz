@@ -1,10 +1,12 @@
 import React from "react";
 
-function Input(){
-    return(
-        <div>
-            <input/>
-            <button>Add</button>
-        </div>
-    );
+function AddNewTodo() {
+  return (
+    <div>
+      <input type="text"/>
+      <button>Add</button>
+    </div>
+  );
 }
+
+export default AddNewTodo;
