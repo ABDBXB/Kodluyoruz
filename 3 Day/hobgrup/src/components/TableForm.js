@@ -10,7 +10,7 @@ class TableForm extends React.Component {
 
   handleButtonClick(e) {
     e.preventDefault();
-    alert(this.state.name);
+    this.props.addNewPerson(this.state);
   }
 
   updateUser(event) {

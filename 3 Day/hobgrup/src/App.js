@@ -31,6 +31,12 @@ class PersonTable extends React.Component {
       },
     ],
   };
+  handleAddNewPerson=(Person)=>{
+    this.setState({
+      data : [...this.state.data,Person],
+    })
+  }
+
   render() {
     const { data } = this.state;
     return (
@@ -39,31 +45,12 @@ class PersonTable extends React.Component {
           <TableHead columns={columns} />
           <TableBody rows={data} />
         </table>
-        <TableForm />
-        <button
-          onClick={() => {
-            this.setState({
-              data: [
-                ...this.state.data,
-                {
-                  id: 2,
-                  name: "Ali",
-                  age: 30,
-                  city: "istanbul",
-                  school: "Gabze Tk",
-                  language: "Turkish",
-                },
-              ],
-            });
-          }}
-        >
-          Render
-        </button>
+        <TableForm addNewPerson={this.handleAddNewPerson} />
       </div>
     );
   }
 }
-
+export default App;
 // class App extends React.Component {
 //   render() {
 //     return (
@@ -95,4 +82,4 @@ class PersonTable extends React.Component {
 // function App(){
 //   return <h1>Hello From Function</h1>
 // }
-export default App;
+
