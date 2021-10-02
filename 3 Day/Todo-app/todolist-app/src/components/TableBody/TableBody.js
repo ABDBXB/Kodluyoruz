@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import TodoContext from "../../context/Todo";
 
 function TableBody() {
+  const { list,removeTodo } = useContext(TodoContext);
   return (
     <>
       <tbody>
-        <tr>
-          <th>Todo 1</th>
-          <button>Remove</button>
-        </tr>
+        {list.map((todo, index) => {
+          return (
+            <tr key={index}>
+              <th>{todo.text}</th>
+              <button onClick={() => {
+              removeTodo(todo.text);
+              }}>Remove</button>
+            </tr>
+          );
+        })}
       </tbody>
     </>
   );

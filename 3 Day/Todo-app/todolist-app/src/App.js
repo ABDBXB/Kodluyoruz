@@ -11,12 +11,18 @@ function App() {
       list: [...todoState.list, {text}],
     });
   };
+  const removeTodo = (text) => {
+    setTodoState({
+      list : todoState.list.filter((item)=> item.text!==text)
+    })
+  };
   return (
     <div>
       <TodoContext.Provider
         value={{
-          list: TodoList.list,
-          addNewTodo: addNewTodo ,
+          list: todoState.list,
+          addNewTodo : addNewTodo ,
+          removeTodo : removeTodo,
         }}
       >
         <AddNewTodo />
