@@ -10,6 +10,7 @@ import MessageInput from "./components/MessageInput";
 import Messages from "./components/Messages";
 
 function Chat() {
+
   return (
     <div className="chat-container">
       <div className="left-side">

@@ -1,7 +1,21 @@
 import React , {useContext} from "react";
+import {Redirect,withRouter} from "react-router-dom";
 import UserContext from "../../../context/userContext";
 
-export default function Settings() {
+
+
+
+ function Settings() {
   const {logout}  = useContext(UserContext);
-  return(<button onClick={logout}>Logout</button>) ;
+  const signout = ()=>{
+    logout();
+
+    return( <Redirect to="/login"/>)
+    
+  
+  }
+
+ 
+  return(<button onClick={signout}>Logout</button>) ;
 }
+export default withRouter (Settings);
