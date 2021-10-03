@@ -17,9 +17,9 @@ import Chat from "./pages/chat/Chat";
 function Routes() {
     // truthy ({}, [], 123, "lsdf") -falsy (null)
     const { user, logout } = useLogin();
-  
+   
     return (
-      <Router>
+      <HRouter>
   
         <Switch>
           <Route path="/chat">
@@ -33,7 +33,7 @@ function Routes() {
             <h1>Sign Up</h1>
           </Route>
         </Switch>
-      </Router>
+      </HRouter>
     );
   }
   
