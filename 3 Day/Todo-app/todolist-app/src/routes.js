@@ -1,28 +1,41 @@
-import React  from "react";
-import { BrowserRouter as Route, HashRouter, Switch,Link } from "react-router-dom";
+import React,{ useState}  from "react";
+import { BrowserRouter as Route, HashRouter, Switch,Link ,Redirect} from "react-router-dom";
 import Todo from "./pages/Todo";
 import useLogin from "./components/hooks/useLogin"
+import Login from "./pages/Login";
+//import userContext from "./context/login"
 function Routes() {
-  const {user}  = useLogin();
+  const {user,logout}  = useLogin();
   return (
     <Route>
       <ul>
-        <li> <Link to="Todo" >Todo </Link> </li>
-        <li> <Link to="login" >Login </Link> </li>
+        {user ?<> <li> <Link to="Todo" >Todo </Link> </li> <button onClick={logout}> Log Out</button></>: null }
+       <li> <Link to="login" >Login </Link> </li> 
         <li> <Link to="signup" >SignUp </Link> </li>
 
       </ul>
       <Switch>
-        <Route path="/Todo">
-          <Todo />
-        </Route>
+        {
+          user ? (
+          <Route path="/Todo">
+            <Todo />
+          </Route>
+          ) :null
+        }
 
-        <Route path="/login">
-        <h1>Login</h1>
-        </Route>
-        <Route path="/signup">
-        <h1>Sign up</h1>
-        </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+  
+          <Route path="/signup">
+          <h1>Sign up</h1>
+          </Route>
+          
+        
+        
+        
+
+        
       </Switch>
     </Route>
   );
