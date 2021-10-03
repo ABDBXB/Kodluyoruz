@@ -9,7 +9,7 @@ function Login() {
     const [lastName, setLastName] = useState("");
     const { pathname } = useLocation();
   
-    if (user&& pathname === "/login"){return <Redirect to="/chat" />}
+    if (user && pathname === "/login"){return <Redirect to="/chat" />}
   
     return (
       <div>
