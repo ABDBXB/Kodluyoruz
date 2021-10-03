@@ -9,8 +9,7 @@ function App() {
   const selectUser = (userId) => {
     const user = mockUsers.users.find((user) => user.id === userId);
     setSelectedUser(user);
-    // listeden userId'li kullanıcıyı bul
-    // kullanıcıyı selectedUser state'ine ata
+
   };
 
   const login = (username) => {

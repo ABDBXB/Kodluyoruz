@@ -20,7 +20,7 @@ function Routes() {
    
     return (
       <HRouter>
-  
+  <Redirect to="/login"/>
         <Switch>
           <Route path="/chat">
             <Chat />
