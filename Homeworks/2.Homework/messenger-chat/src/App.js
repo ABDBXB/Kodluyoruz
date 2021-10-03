@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-
-import UserContext from "./context/loginCon";
-import Routes from "./routes";
+import React,{useState,useEffect} from 'react';
+import UserContext from "./context/userContext"
+import Routes from "./routes"
 import mockUsers from "./mock-users.json";
-
 function App() {
   const [user, setUser] = useState(null);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -36,7 +34,6 @@ function App() {
       setUser(userObject);
     }
   }, []);
-
   return (
     <UserContext.Provider
       value={{
