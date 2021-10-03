@@ -1,5 +1,7 @@
-import React from "react";
+import React , {useContext} from "react";
+import UserContext from "../../../context/userContext";
 
 export default function Settings() {
-  return <div>Settings</div>;
+  const {logout}  = useContext(UserContext);
+  return(<button onClick={logout}>Logout</button>) ;
 }

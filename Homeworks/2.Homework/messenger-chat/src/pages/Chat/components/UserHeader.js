@@ -1,5 +1,5 @@
 import React from "react";
-import { UserContext } from "../../../context/userContext";
+import  UserContext  from "../../../context/userContext";
 
 export default function UserHeader() {
   const { selectedUser } = React.useContext(UserContext);

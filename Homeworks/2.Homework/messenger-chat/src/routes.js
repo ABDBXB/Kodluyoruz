@@ -20,7 +20,6 @@ function Routes() {
   
     return (
       <Router>
-        <Login />
   
         <Switch>
           <Route path="/chat">
