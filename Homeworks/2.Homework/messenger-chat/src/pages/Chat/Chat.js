@@ -19,6 +19,9 @@ function Chat() {
         <SearchInput />
         <UserList />
         <Settings />
+
+
+        
       </div>
       <div className="right-side">
         <UserHeader />
