@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Redirect, useLocation } from "react-router-dom";
-
+import "./Login.css";
 import useLogin from "../../hooks/useLogin"
 function Login() {
     const { user, login } = useLogin();
@@ -12,22 +12,26 @@ function Login() {
     if (user && pathname === "/login"){return <Redirect to="/chat" />}
   
     return (
-      <div>
-        <input
+      <div className="container">
+        <h3>Login to your account</h3><br/>
+        <input 
+        placeholder="User Name"
           type="text"
           name="username"
           onChange={(e) => {
             setUsername(e.target.value);
           }}
         />
-        <input
+        <input 
+        placeholder="First Name"
           type="password"
           name="first_name"
           onChange={(e) => {
             setFirstName(e.target.value);
           }}
         />
-        <input
+        <input 
+        placeholder="Last Name"
           type="password"
           name="last_name"
           onChange={(e) => {
