@@ -38,7 +38,7 @@
   flex: 1;
 }
 .user-list__image img {
-  width: 100%;
+  width: 50px;
   border-radius: 60px;
 }
 
@@ -69,10 +69,38 @@
   justify-content: center;
 }
 .Searchbar input {
-  
   width: 300px;
   padding: 8px 15px;
-  margin:  10px;
+  margin:  15px;
   background-color: #f3f3f3;
   border: 1px solid #DDDDDD;
 }
+/*---------------------------UserHeader--------------------*/
+.userheader {
+  display: flex;
+  flex-direction: row;
+  background-color: #f3f3f3;
+  height:67px;
+  border: 1px red solid;
+}
+.user-header__username{ 
+  border: 1px red solid;
+  flex:10;
+}
+.user-header__username{ 
+  
+}
+.user-header__userimage{ 
+  display: flex;
+flex:1;
+justify-content: center;
+align-items: center;
+border: 1px red solid;
+}
+.user-header__userimage img{ 
+  width:50px;
+  border-radius: 50px;
+
+}
+.user-header__usermorebtn{flex:1; border: 1px red solid; }
+.user-header__usermorebtn button{ }
