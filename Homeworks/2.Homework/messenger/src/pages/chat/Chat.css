@@ -67,6 +67,7 @@
 .Searchbar {
   display: flex;
   justify-content: center;
+  
 }
 .Searchbar input {
   width: 300px;
@@ -80,25 +81,22 @@
   display: flex;
   flex-direction: row;
   background-color: #f3f3f3;
-  height: 67px;
-
+  height: 65px;
+  outline: 1px #fff solid;
 }
 .user-header__username {
-
   flex: 10;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.user-header__username p{
-
+.user-header__username p {
 }
 .user-header__userimage {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
-
 }
 .user-header__userimage img {
   width: 50px;
@@ -109,13 +107,11 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-
-
 }
 .user-header__usermorebtn button {
   transition: 0.4s ease-in-out;
   background-color: #f3f3f3;
-  width:50px;
+  width: 50px;
   font-size: 30px;
   color: hsl(0, 0%, 69%);
   font-weight: bolder;
@@ -127,27 +123,60 @@
 }
 /*---------------------------Messages--------------------*/
 
-.messages{
+.messages {
   display: flex;
   flex-direction: column;
-  
 }
-.messages__sended{
+.messages__sended {
   position: relative;
   width: 50%;
   padding: 15px;
   margin: 20px;
-  background-color: #68B7FF;
-  
+  background-color: #68b7ff;
+  border-bottom-right-radius: 4px;
 }
 .messages__sended:before {
   content: "";
   position: absolute;
-  left:-5px;
-  top:0px;
-  border-top: 10px #68B7FF solid;
+  left: -5px;
+  top: 0px;
+  border-top: 10px #68b7ff solid;
   border-right: 10px transparent solid;
   border-left: 10px transparent solid;
   border-bottom: 10px transparent solid;
+}
+/*---------------------------Messages input--------------------*/
+.MessageInput-container {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px #c4c4c4 solid;
+}
+.MessageInput {
+  flex: 10;
   
+}
+.MessageInput input {
+  width: 900px;
+  padding: 15px 15px;
+  margin: 10px;
+  background-color: #f3f3f3;
+  border: none;
+}
+
+.Messagesendbtn{
+  display: flex;
+  flex: 2;
+  
+  justify-content:center;
+  align-items:center;
+
+}
+.Messagesendbtn button {
+  background-color: #68B7FF;
+  border: none;
+  padding: 15px 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: bolder;
 }
