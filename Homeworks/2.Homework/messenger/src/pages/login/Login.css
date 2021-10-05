@@ -8,6 +8,9 @@
     height: 100vh;
 
 }
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;;
+}
 input {
     font-size: 16px;
     width: 400px;
