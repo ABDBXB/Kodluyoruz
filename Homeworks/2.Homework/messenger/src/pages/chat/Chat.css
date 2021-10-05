@@ -11,9 +11,6 @@
   flex-direction: column;
 }
 
-.left-side div,
-.right-side div {
-}
 
 .left-side {
   flex: 1;
@@ -30,11 +27,38 @@
 }
 
 .user-list__user {
+  display: flex;
+  flex-direction: row;
   margin: 2px 2px 2px 0px;
   padding: 5px;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: none;
+}
+.user-list__image {
+  padding: 5px;
+  flex: 1;
+}
+.user-list__image img{
+  width: 100%;
+  border-radius: 60px;
+}
+
+.user-list__rightconteiner{ 
+  display: flex;
+  flex-direction: column;
+  flex:5;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.user-list__username{ 
+  margin-bottom:5px;
+  font-weight: bold;
+}
+.user-list__lastmessage{ 
+  padding-top:5px;
+  flex:1;
+  color: #c4c4c4;
 }
 
 .user-list__user:hover {
