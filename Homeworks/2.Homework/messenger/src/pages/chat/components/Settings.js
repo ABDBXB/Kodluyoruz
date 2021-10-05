@@ -1,13 +1,9 @@
-import React , {useContext} from "react";
-import {Redirect,withRouter} from "react-router-dom";
+import React from "react";
 import useLogin from "../../../hooks/useLogin";
 
+function Settings() {
+  const { logout } = useLogin();
 
-
-
- function Settings() {
-  const {logout}  = useLogin();
- 
-  return(<button onClick={logout}>Logout</button>) ;
+  return <button onClick={logout}>Logout</button>;
 }
 export default Settings;

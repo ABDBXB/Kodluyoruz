@@ -14,9 +14,14 @@ function App() {
 
   const login = (username) => {
     const user = { username };
-
-    setUser(user);
-    localStorage.setItem("username", JSON.stringify(user));
+    const userfromlist = mockUsers.users.find((user) => user.username === user);
+    
+    if(!userfromlist){
+      setUser(user);
+      console.log(user);
+      localStorage.setItem("username", JSON.stringify(user));
+    }
+    
   };
 
   const logout = () => {

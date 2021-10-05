@@ -13,11 +13,11 @@
 
 .left-side div,
 .right-side div {
-  border: 1px solid black;
 }
 
 .left-side {
   flex: 1;
+  background-color: #F3F3F3;
 }
 
 .right-side {
@@ -30,9 +30,13 @@
 }
 
 .user-list__user {
+  margin: 2px 2px 2px 0px;
+  padding: 5px;
   cursor: pointer;
+  background-color: #FFFFFF;
+  border: none;
 }
 
 .user-list__user:hover {
-  background-color: #e2e2e2;
+  background-color: #FDFDFD;
 }
