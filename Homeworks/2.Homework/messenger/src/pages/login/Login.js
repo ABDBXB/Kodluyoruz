@@ -13,7 +13,7 @@ function Login() {
   
     return (
       <div className="container">
-        <h3>Login to your account</h3><br/>
+        <h3>Login to your account</h3><br/><br/>
         <input 
         placeholder="User Name"
           type="text"
@@ -38,7 +38,7 @@ function Login() {
             setLastName(e.target.value);
           }}
         />
-        <button
+        <button className="loginbutton"
           onClick={() => {
             login({
               username,
