@@ -67,7 +67,6 @@
 .Searchbar {
   display: flex;
   justify-content: center;
-  
 }
 .Searchbar input {
   width: 300px;
@@ -148,35 +147,79 @@
 /*---------------------------Messages input--------------------*/
 .MessageInput-container {
   display: flex;
+  width: 100%;
   flex-direction: row;
   border-top: 1px #c4c4c4 solid;
 }
 .MessageInput {
   flex: 10;
-  
 }
 .MessageInput input {
-  width: 900px;
+  width: 100%;
   padding: 15px 15px;
   margin: 10px;
   background-color: #f3f3f3;
   border: none;
 }
 
-.Messagesendbtn{
+.Messagesendbtn {
   display: flex;
   flex: 2;
-  
-  justify-content:center;
-  align-items:center;
-
+  justify-content: center;
+  align-items: center;
 }
 .Messagesendbtn button {
-  background-color: #68B7FF;
+  position: relative;
+  background-color: #68b7ff;
   border: none;
   padding: 15px 20px;
   color: #ffffff;
   letter-spacing: 1px;
   font-size: 15px;
   font-weight: bolder;
+}
+.Messagesendbtn button:before {
+  content: "";
+  position: absolute;
+  top:18.5px;
+  right: 7px;
+  border-top: 5px transparent solid;
+  border-right: 5px transparent solid;
+  border-left: 5px #fff solid;
+  border-bottom: 5px transparent solid;
+
+}
+/*---------------------------Settings--------------------*/
+
+.setting-container {
+  display: flex;
+  justify-content: flex-end;
+
+  flex-direction: row;
+  height: 66px;
+  border-top: 1px #c4c4c4 solid;
+}
+
+.setting__logoutbtn button {
+  margin: 9px;
+  background-color: #d6d6d6;
+  border: none;
+  padding: 13px 15px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bolder;
+  text-shadow: #000 1px 2px 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.setting__logoutbtn button:hover {
+  transition: 0.3s ease-in-out;
+  margin: 9px;
+  background-color: #d6d6d6;
+  border: none;
+  padding: 13px 15px;
+  color: #000;
+  text-shadow: #000 1px 2px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 20px 29px 0px;
+  transform: rotateX(20deg);
 }
