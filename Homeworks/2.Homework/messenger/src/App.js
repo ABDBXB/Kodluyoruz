@@ -18,7 +18,6 @@ function App() {
     const user = {username};
 
     if(userfromlist){
-      console.log(user +"/" + userfromlist);
       setUser(user);
       console.log(user);
       localStorage.setItem("username", JSON.stringify(user));
