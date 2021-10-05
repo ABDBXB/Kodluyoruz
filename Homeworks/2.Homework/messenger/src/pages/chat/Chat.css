@@ -64,43 +64,64 @@
   background-color: #fdfdfd;
 }
 /*---------------------------Searchbar--------------------*/
-.Searchbar{
+.Searchbar {
   display: flex;
   justify-content: center;
 }
 .Searchbar input {
   width: 300px;
   padding: 8px 15px;
-  margin:  15px;
+  margin: 15px;
   background-color: #f3f3f3;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 /*---------------------------UserHeader--------------------*/
 .userheader {
   display: flex;
   flex-direction: row;
   background-color: #f3f3f3;
-  height:67px;
-  border: 1px red solid;
-}
-.user-header__username{ 
-  border: 1px red solid;
-  flex:10;
-}
-.user-header__username{ 
-  
-}
-.user-header__userimage{ 
-  display: flex;
-flex:1;
-justify-content: center;
-align-items: center;
-border: 1px red solid;
-}
-.user-header__userimage img{ 
-  width:50px;
-  border-radius: 50px;
+  height: 67px;
 
 }
-.user-header__usermorebtn{flex:1; border: 1px red solid; }
-.user-header__usermorebtn button{ }
+.user-header__username {
+
+  flex: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-header__username p{
+
+}
+.user-header__userimage {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+.user-header__userimage img {
+  width: 50px;
+  border-radius: 50px;
+}
+.user-header__usermorebtn {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.user-header__usermorebtn button {
+  transition: 0.4s ease-in-out;
+  background-color: #f3f3f3;
+  width:50px;
+  font-size: 30px;
+  color: hsl(0, 0%, 69%);
+  font-weight: bolder;
+  border: none;
+}
+.user-header__usermorebtn button:hover {
+  color: #000;
+  transition: 0.4s ease-in-out;
+}
