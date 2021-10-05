@@ -13,10 +13,12 @@ function App() {
   };
 
   const login = (username) => {
-    const user = { username };
-    const userfromlist = mockUsers.users.find((user) => user.username === user);
     
-    if(!userfromlist){
+    const userfromlist = mockUsers.users.find((user) => user.username === username.username);
+    const user = {username};
+
+    if(userfromlist){
+      console.log(user +"/" + userfromlist);
       setUser(user);
       console.log(user);
       localStorage.setItem("username", JSON.stringify(user));
