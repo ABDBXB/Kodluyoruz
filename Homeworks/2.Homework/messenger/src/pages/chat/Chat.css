@@ -125,3 +125,29 @@
   color: #000;
   transition: 0.4s ease-in-out;
 }
+/*---------------------------Messages--------------------*/
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  
+}
+.messages__sended{
+  position: relative;
+  width: 50%;
+  padding: 15px;
+  margin: 20px;
+  background-color: #68B7FF;
+  
+}
+.messages__sended:before {
+  content: "";
+  position: absolute;
+  left:-5px;
+  top:0px;
+  border-top: 10px #68B7FF solid;
+  border-right: 10px transparent solid;
+  border-left: 10px transparent solid;
+  border-bottom: 10px transparent solid;
+  
+}

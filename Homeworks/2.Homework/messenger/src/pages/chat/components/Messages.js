@@ -9,7 +9,7 @@ export default function Messages() {
     <div className="messages">
       {selectedUser
         ? selectedUser.messages.map((message) => {
-            return <div>{message.text}</div>;
+            return <div className="messages__sended">{message.text}</div>;
           })
         : null}
     </div>
