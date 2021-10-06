@@ -9,5 +9,5 @@ export default function SearchInput() {
     
 
 
-  return <div className="Searchbar"><input type="text" placeholder="Search" onChange={(e)=>{setSearchWrod(e.target.value); console.log(searchword)}}/></div>;
+  return <div className="Searchbar"><input type="text" placeholder="Search" onChange={(e)=>{setSearchWrod(e.target.value); theme="hell"; console.log(theme)}}/></div>;
 }
