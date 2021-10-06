@@ -29,10 +29,7 @@ export default function UserList({searchWord}) {
 
                 <div className="user-list__lastmessage">
                   <p>
-                    {item.messages[item.messages.length - 1].text.substring(
-                      0,
-                      20
-                    ) + "......"}
+                    {item.messages[item.messages.length - 1].text.substring(0,20) + "......"}
                   </p>
                 </div>
               </div>

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import UserContext from "../../../context/userContext";
-import useLogin from "../../..//hooks/useLogin";
 
 export default function SearchInput({handleOnChange}) {
   return (

@@ -5,6 +5,27 @@
   flex-direction: row;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius:15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .left-side,
 .right-side {
   display: flex;
@@ -125,7 +146,9 @@
 .messages {
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
+
 .messages__sended {
   position: relative;
   width: 50%;

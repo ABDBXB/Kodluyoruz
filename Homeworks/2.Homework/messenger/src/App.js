@@ -42,6 +42,25 @@ function App() {
       setUser(userObject);
     }
   }, []);
+
+
+
+const handleSenNewMessage=(messageText)=>{
+  setSelectedUser({
+    ...selectedUser,
+    messages:[
+      ...selectedUser.messages,
+      {
+        id: Math.random(),
+        text: messageText,
+        sender: user.id,
+      },
+    ]
+  })
+
+}
+
+
   return (
     <UserContext.Provider
       value={{
@@ -52,6 +71,7 @@ function App() {
         login,
         logout,
         selectUser,
+        handleSenNewMessage,
       }}
     >
       <Routes />
