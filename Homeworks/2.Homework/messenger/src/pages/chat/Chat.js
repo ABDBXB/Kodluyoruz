@@ -12,12 +12,14 @@ import useLogin from "../../hooks/useLogin";
 
 function Chat() {
   const {user}=useLogin();
+  const [searchword, setSearchWrod] = useState("");
+  
   if (!user) return <Redirect to="/login"/>
   return (
     <div className="chat-container">
       <div className="left-side">
-        <SearchInput />
-        <UserList />
+        <SearchInput searchWord={searchword} handleOnChange={setSearchWrod} />
+        <UserList searchWord={searchword} />
         <Settings />
       </div>
       <div className="right-side">
