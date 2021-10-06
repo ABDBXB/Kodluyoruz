@@ -14,7 +14,7 @@ function App() {
 
   const login = (username) => {
     
-    const userfromlist = mockUsers.users.find((user) => user.username === username.username);
+    const userfromlist = mockUsers.users.find((user) => user.username === username.username.toLowerCase());
     const user = {username};
 
     if(userfromlist){
