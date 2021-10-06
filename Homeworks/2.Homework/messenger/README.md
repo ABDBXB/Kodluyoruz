@@ -3,4 +3,4 @@
 [Messenger App.com](https://upbeat-volhard-a0b575.netlify.app/)
 
 
-![Chat Page](https://github.com/ABDBXB/Kodluyoruz/blob/main/Homeworks/2.Homework/messenger/Chat%20Page.png)
+![Chat Page](https://github.com/ABDBXB/Kodluyoruz/blob/main/Homeworks/2.Homework/messenger/images/Chat%20Page.png)
