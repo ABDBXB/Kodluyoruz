@@ -177,7 +177,7 @@
   letter-spacing: 1px;
   font-size: 15px;
   font-weight: bolder;
-}
+}/*
 .Messagesendbtn button:before {
   content: "";
   position: absolute;
@@ -188,7 +188,7 @@
   border-left: 5px #fff solid;
   border-bottom: 5px transparent solid;
 
-}
+}*/
 /*---------------------------Settings--------------------*/
 
 .setting-container {
