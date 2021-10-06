@@ -15,7 +15,7 @@ function Login() {
       <div className="container">
         <h3>Login to your account</h3><br/><br/>
         <input 
-        placeholder="User Name (For ex: luke / brianna / eric)"
+        placeholder="User Name (Please Login With: luke / brianna / eric)"
           type="text"
           name="username"
           onChange={(e) => {
