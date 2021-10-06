@@ -6,6 +6,7 @@ const UserContext = React.createContext({
     userList : [],
     login:()=>{},
     logout:()=>{},
+    handleSenNewMessage:()=>{},
 
 });
 

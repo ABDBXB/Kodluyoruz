@@ -157,6 +157,29 @@
   background-color: #68b7ff;
   border-bottom-right-radius: 4px;
 }
+.messages__sended.from-me{
+  position: relative;
+  width: 50%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  align-self: flex-end;
+  background-color: #f3f3f3;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+}
+.messages__sended.from-me::after{
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 0px;
+  border-top: 10px #f3f3f3 solid;
+  border-right: 10px transparent solid;
+  border-left: 10px transparent solid;
+  border-bottom: 10px transparent solid;
+}
+.messages__sended.from-me:before{
+  display: none;
+}
 .messages__sended:before {
   content: "";
   position: absolute;

@@ -9,8 +9,8 @@ export default function MessageInput() {
 
 
   return (<div className="MessageInput-container">
-    <div className="MessageInput" ><input type="text" placeholder="Type..." onChange={(e)=>{setMessage(e.target.value)}}/></div>
-    <div className="Messagesendbtn" ><button onClick={(e)=>{handleSenNewMessage(message); setMessage('')}}>Send</button></div>
+    <div className="MessageInput" ><input type="text" placeholder="Type..." onChange={(e)=>{setMessage(e.target.value);} }/></div>
+    <div className="Messagesendbtn" ><button onClick={(e)=>{if(message){handleSenNewMessage(message); setMessage('') }else{} }}>Send</button></div>
     
   </div>);
 }
