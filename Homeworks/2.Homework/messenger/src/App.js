@@ -30,6 +30,8 @@ function App() {
     localStorage.removeItem("username");
   };
 
+  
+
   useEffect(() => {
     const userNameFromStorage = localStorage.getItem("username");
 
@@ -42,6 +44,7 @@ function App() {
   return (
     <UserContext.Provider
       value={{
+        theme : "light",
         user,
         userList: mockUsers.users,
         selectedUser,
