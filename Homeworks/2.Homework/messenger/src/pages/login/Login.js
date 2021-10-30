@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Redirect, useLocation } from "react-router-dom";
 import "./Login.css";
-import useLogin from "../../hooks/useLogin"
+import useLogin from "../../hooks/useLogin";
+import userContext from "../../context/userContext";
 function Login() {
+    const {switchTheme,theme} = useContext(userContext);
     const { user, login } = useLogin();
     const [username, setUsername] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -12,7 +14,7 @@ function Login() {
     if (user && pathname === "/login"){return <Redirect to="/chat" />}
   
     return (
-      <div className="container">
+      <div className={"container"+theme}>
         <h3>Login to your account</h3><br/><br/>
         <input 
         placeholder="User Name / Please Login With: luke !!"
@@ -49,6 +51,7 @@ function Login() {
         >
           Login
         </button>
+        <button onClick={()=>{switchTheme();}} >Change To {theme==="dark"?"light":"dark"}</button>
       </div>
     );
   }

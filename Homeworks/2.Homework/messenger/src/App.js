@@ -4,7 +4,13 @@ import Routes from "./routes"
 import mockUsers from "./mock-users.json";
 function App() {
   const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState("light");
   const [selectedUser, setSelectedUser] = useState(null);
+
+  const switchTheme = ()=>{
+    theme==="light" ? setTheme("dark") : setTheme("light");
+    
+  };
 
   const selectUser = (userId) => {
     const user = mockUsers.users.find((user) => user.id === userId);
@@ -65,7 +71,8 @@ const handleSenNewMessage=(messageText)=>{
   return (
     <UserContext.Provider
       value={{
-        theme : "light",
+        theme : theme,
+        switchTheme,
         user,
         userList: mockUsers.users,
         selectedUser,
