@@ -51,7 +51,6 @@ function Login() {
         >
           Login
         </button>
-        <button onClick={()=>{switchTheme();}} >Change To {theme==="dark"?"light":"dark"}</button>
       </div>
     );
   }

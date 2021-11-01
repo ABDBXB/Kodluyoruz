@@ -41,12 +41,24 @@
   flex: 4;
 }
 /*---------------------------Userlist--------------------*/
-.user-list,
-.messages {
+.user-listdark {
   flex: 1;
+  background-color: #6A6A6A;
 }
 
-.user-list__user {
+.user-listlight {
+  flex: 1;
+  background-color: #F3F3F3;
+}
+.user-list__userdark {
+  display: flex;
+  flex-direction: row;
+  margin: 2px 2px 2px 0px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #7A7A7A;
+}
+.user-list__userlight {
   display: flex;
   flex-direction: row;
   margin: 2px 2px 2px 0px;
@@ -71,11 +83,21 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.user-list__username {
+.user-list__usernamedark {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.user-list__usernamelight {
   margin-bottom: 5px;
   font-weight: bold;
 }
-.user-list__lastmessage {
+.user-list__lastmessagedark {
+  padding-top: 5px;
+  flex: 1;
+  color: #C8C8C8;
+}
+.user-list__lastmessagelight {
   padding-top: 5px;
   flex: 1;
   color: #c4c4c4;
@@ -85,11 +107,24 @@
   background-color: #fdfdfd;
 }
 /*---------------------------Searchbar--------------------*/
-.Searchbar {
+.Searchbardark {
   display: flex;
   justify-content: center;
+  background-color: #6A6A6A;
 }
-.Searchbar input {
+.Searchbardark input {
+  width: 300px;
+  padding: 8px 15px;
+  margin: 15px;
+  background-color: #7A7A7A;
+  border: 1px solid #6A6A6A;
+}
+.Searchbarlight {
+  display: flex;
+  justify-content: center;
+  background-color: #F3F3F3;
+}
+.Searchbarlight input {
   width: 300px;
   padding: 8px 15px;
   margin: 15px;
@@ -97,21 +132,37 @@
   border: 1px solid #dddddd;
 }
 /*---------------------------UserHeader--------------------*/
-.userheader {
+.userheaderdark {
+  display: flex;
+  flex-direction: row;
+  background-color: #6A6A6A;
+  height: 65px;
+  outline: 1px #7A7A7A solid;
+}
+.userheaderlight {
   display: flex;
   flex-direction: row;
   background-color: #f3f3f3;
   height: 65px;
   outline: 1px #fff solid;
 }
-.user-header__username {
+.user-header__usernamedark {
   flex: 10;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  color: #ffffff;
+  font-weight: bolder;
 }
-.user-header__username p {
+.user-header__usernamelight {
+  flex: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #000000;
+  font-weight: bolder;
 }
+
 .user-header__userimage {
   display: flex;
   flex: 1;
@@ -122,13 +173,23 @@
   width: 50px;
   border-radius: 50px;
 }
-.user-header__usermorebtn {
+
+.user-header__usermorebtnlight,.user-header__usermorebtndark {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
 }
-.user-header__usermorebtn button {
+.user-header__usermorebtndark button {
+  transition: 0.4s ease-in-out;
+  background-color: #6A6A6A;
+  width: 50px;
+  font-size: 30px;
+  color: hsl(0, 0%, 69%);
+  font-weight: bolder;
+  border: none;
+}
+.user-header__usermorebtnlight button {
   transition: 0.4s ease-in-out;
   background-color: #f3f3f3;
   width: 50px;
@@ -137,14 +198,25 @@
   font-weight: bolder;
   border: none;
 }
-.user-header__usermorebtn button:hover {
+.user-header__usermorebtndark button:hover{
+  color: #ffffff;
+  transition: 0.4s ease-in-out;
+}
+.user-header__usermorebtnlight button:hover {
   color: #000;
   transition: 0.4s ease-in-out;
 }
 /*---------------------------Messages--------------------*/
-
-.messages {
+.messagesdark {
   display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  background-color: #7A7A7A;
+}
+.messageslight {
+  display: flex;
+  flex: 1;
   flex-direction: column;
   overflow: auto;
 }
@@ -191,7 +263,14 @@
   border-bottom: 10px transparent solid;
 }
 /*---------------------------Messages input--------------------*/
-.MessageInput-container {
+.MessageInput-containerdark {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  background-color: #7A7A7A;
+  border-top: 1px #c4c4c4 solid;
+}
+.MessageInput-containerlight {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -236,11 +315,17 @@
 
 }*/
 /*---------------------------Settings--------------------*/
-
-.setting-container {
+.setting-containerdark {
   display: flex;
   justify-content: flex-end;
-
+  flex-direction: row;
+  height: 66px;
+  background-color: #6A6A6A;
+  border-top: 1px #c4c4c4 solid;
+}
+.setting-containerlight {
+  display: flex;
+  justify-content: flex-end;
   flex-direction: row;
   height: 66px;
   border-top: 1px #c4c4c4 solid;
