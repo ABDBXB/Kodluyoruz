@@ -11,6 +11,7 @@ import {
 import useLogin from "./hooks/useLogin";
 import Login from "./pages/login/Login";
 import Chat from "./pages/chat/Chat";
+import User from "./pages/user/User";
 
 
 
@@ -22,13 +23,17 @@ function Routes() {
       <HRouter>
   <Redirect to="/login"/>
         <Switch>
+        <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/chat">
             <Chat />
           </Route>
-  
-          <Route path="/login">
-            <Login />
+          <Route path="/user">
+          <User/>
           </Route>
+  
+
           <Route path="/signup">
             <h1>Sign Up</h1>
           </Route>

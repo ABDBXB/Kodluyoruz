@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Redirect } from 'react-router';
+import UserContext from "../../context/userContext"
 import "./Chat.css";
 
 import SearchInput from "./components/SearchInput";
@@ -12,9 +13,12 @@ import useLogin from "../../hooks/useLogin";
 
 function Chat() {
   const {user}=useLogin();
+  const {userInfo}=useContext(UserContext);
   const [searchword, setSearchWrod] = useState("");
   
   if (!user) return <Redirect to="/login"/>
+  if (userInfo) return <Redirect to="/user"/>
+  
   return (
     <div className="chat-container">
       <div className="left-side">

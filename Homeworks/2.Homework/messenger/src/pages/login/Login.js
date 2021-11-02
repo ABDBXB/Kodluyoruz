@@ -4,7 +4,7 @@ import "./Login.css";
 import useLogin from "../../hooks/useLogin";
 import userContext from "../../context/userContext";
 function Login() {
-    const {switchTheme,theme} = useContext(userContext);
+    const {theme} = useContext(userContext);
     const { user, login } = useLogin();
     const [username, setUsername] = useState("");
     const [firstName, setFirstName] = useState("");

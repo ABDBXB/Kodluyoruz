@@ -4,11 +4,21 @@ import Routes from "./routes"
 import mockUsers from "./mock-users.json";
 function App() {
   const [user, setUser] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
   const [theme, setTheme] = useState("light");
   const [selectedUser, setSelectedUser] = useState(null);
 
   const switchTheme = ()=>{
     theme==="light" ? setTheme("dark") : setTheme("light");
+    
+  };
+  const getmoreinfo = (inputuser)=>{
+    const user = mockUsers.users.find((user) => user.id === inputuser.id);
+    setUserInfo(user);
+    
+  };
+  const closeinfo = ()=>{
+    setUserInfo(null);
     
   };
 
@@ -25,7 +35,6 @@ function App() {
 
     if(userfromlist){
       setUser(user);
-      console.log(user);
       localStorage.setItem("username", JSON.stringify(user));
     }
     
@@ -76,6 +85,9 @@ const handleSenNewMessage=(messageText)=>{
         user,
         userList: mockUsers.users,
         selectedUser,
+        getmoreinfo,
+        userInfo,
+        closeinfo,
         login,
         logout,
         selectUser,
