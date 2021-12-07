@@ -10,7 +10,7 @@ You can access the website using this link [**Filmflex**](https://filmflex.netli
 
 ![Chat Page](https://github.com/ABDBXB/Kodluyoruz/blob/main/Homeworks/1.Homework/Readme%20Files/2021-11-28-18-02-40.gif)
 
-- Tam ekran modu
-- Tüm platformlara destek
+- **Tablet**
+- **Mobile** 
 
   
